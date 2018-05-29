@@ -10,7 +10,7 @@ All options listed on this page apply to the default theme only. If you are usin
 
 ## Homepage
 
-The default theme provides a homepage layout (which is used on [the homepage of this very website](/)). To use it, specify `home: true` plus some other metadata in your root `README.md`'s [YAML front matter](../guide/markdown.html#yaml-front-matter). This is the actual data used on this site:
+The default theme provides a homepage layout (which is used on [the homepage of this very website](../README.md)). To use it, specify `home: true` plus some other metadata in your root `README.md`'s [YAML front matter](../guide/markdown.md#front-matter). This is the actual data used on this site:
 
 ``` yaml
 ---
@@ -141,6 +141,22 @@ A page can also override this value in using `YAML front matter`:
 sidebarDepth: 2
 ---
 ```
+
+### Active Header Links
+
+By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
+
+``` js
+module.exports = {
+  themeConfig: {
+    activeHeaderLinks: false, // Default: true
+  }
+}
+```
+
+::: tip 
+  It is worth mentioning that when you disable this option, the corresponding script of this functionality will not be loaded. This is a small point in our performance optimization.
+:::
 
 ### Sidebar Groups
 
@@ -331,7 +347,7 @@ module.exports = {
     docsDir: 'docs',
     // if your docs are in a specific branch (defaults to 'master'):
     docsBranch: 'master',
-    // defaults to true, set to false to disable
+    // defaults to false, set to true to enable
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
     editLinkText: 'Help us improve this page!'

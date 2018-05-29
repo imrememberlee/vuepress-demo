@@ -40,7 +40,7 @@ Each markdown file is first compiled into HTML and then passed on as a Vue compo
 
 **Output**
 
-<pre><code>{{ 1 + 1 }}</code></pre>
+<div class="language-text"><pre><code>{{ 1 + 1 }}</code></pre></div>
 
 ### Directives
 
@@ -54,7 +54,7 @@ Directives also work:
 
 **Output**
 
-<pre><code><span v-for="i in 3">{{ i }} </span></code></pre>
+<div class="language-text"><pre><code><span v-for="i in 3">{{ i }} </span></code></pre></div>
 
 ### Access to Site & Page Data
 
@@ -152,7 +152,7 @@ yarn add -D pug pug-plain-loader
 ::: tip
 If you are a Stylus user, you don't need to install `stylus` and `stylus-loader` in your project because VuePress uses Stylus internally.
   
-For pre-processors that do not have built-in webpack config support, you will need to [extend the internal webpack config](../config/#configurewebpack) in addition to installing the necessary dependencies.
+For pre-processors that do not have built-in webpack config support, you will need to [extend the internal webpack config](../config/README.md#configurewebpack) in addition to installing the necessary dependencies.
 :::
 
 ## Script & Style Hoisting

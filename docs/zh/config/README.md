@@ -17,7 +17,7 @@ sidebar: auto
 
 **Also see:**
 
-- [Base URL](../guide/assets.md#base-url)
+- [Base URL](../guide/assets.md#基础路径)
 - [部署指南 > Github Pages](../guide/deploy.md#github-pages)
 
 ### title
@@ -44,7 +44,7 @@ sidebar: auto
 ``` js
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }]
+    ['link', { rel: 'icon', href: '/logo.png' }]
   ]
 }
 ```
@@ -93,8 +93,8 @@ module.exports = {
 - `sw-error`
 
 ::: tip PWA NOTES
-`serviceWorker` 仅仅用来控制 service worker，为了让你的网站完全地兼容 PWA，你需要在 `.vuepress/public` 提供 Manifest 和 icons，更多细节，请参见 [MDN docs about the Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
-当然，仅仅只在你的网站部署后能用 SSL 的时候开启它，因为 service worker 只能在 HTTPs 的链接下注册。
+`serviceWorker` 选项仅仅用来控制 service worker，为了让你的网站完全地兼容 PWA，你需要在 `.vuepress/public` 提供 Manifest 和 icons，更多细节，请参见 [MDN docs about the Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+此外，只有您能够使用 SSL 部署您的站点时才能启用此功能，因为 service worker 只能在 HTTPs 的 URL 下注册。
 :::
 
 ### locales
@@ -122,9 +122,16 @@ module.exports = {
 
 **也可以参考:**
 
-- [默认主题](../default-theme-config/)。
+- [默认主题](../default-theme-config/README.md)。
 
 ## Markdown
+
+### markdown.lineNumbers
+
+- 类型: `boolean`
+- 默认值: `undefined`
+
+是否在每个代码块的左侧显示行号。
 
 ### markdown.anchor
 
@@ -152,12 +159,13 @@ module.exports = {
 - 类型: `Function`
 - 默认值: `undefined`
 
-一个用来对当前的 [markdown-it](https://github.com/markdown-it/markdown-it) 实例应用额外的插件的函数，举例如下：
+一个用于修改当前的 [markdown-it](https://github.com/markdown-it/markdown-it) 实例的默认配置，或者应用额外的插件的函数，举例如下：
 
 ``` js
 module.exports = {
   markdown: {
     config: md => {
+      md.set({ breaks: true })
       md.use(require('markdown-it-xxx'))
     }
   }

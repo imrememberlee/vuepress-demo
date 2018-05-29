@@ -44,7 +44,7 @@ Extra tags to be injected to the page HTML `<head>`. Each tag can be specified i
 ``` js
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }]
+    ['link', { rel: 'icon', href: '/logo.png' }]
   ]
 }
 ```
@@ -123,9 +123,16 @@ Provide config options to the used theme. The options will vary depending on the
 
 **Also see:**
 
-- [Default Theme Configuration](../default-theme-config/).
+- [Default Theme Configuration](../default-theme-config/README.md).
 
 ## Markdown
+
+### markdown.lineNumbers
+
+- Type: `boolean`
+- Default: `undefined`
+
+Whether to show line numbers to the left of each code blocks.
 
 ### markdown.slugify
 
@@ -160,12 +167,13 @@ Options for [markdown-it-table-of-contents](https://github.com/Oktavilla/markdow
 - Type: `Function`
 - Default: `undefined`
 
-A function to apply additional plugins to the [markdown-it](https://github.com/markdown-it/markdown-it) instance used to render source files. Example:
+A function to modify default config or apply additional plugins to the [markdown-it](https://github.com/markdown-it/markdown-it) instance used to render source files. Example:
 
 ``` js
 module.exports = {
   markdown: {
     config: md => {
+      md.set({ breaks: true })
       md.use(require('markdown-it-xxx'))
     }
   }

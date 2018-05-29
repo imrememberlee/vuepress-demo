@@ -23,19 +23,21 @@ https://vuepress.vuejs.org/
 - [Vue-powered custom theme system](https://vuepress.vuejs.org/guide/custom-themes.html)
 - [Service Worker Integration](https://vuepress.vuejs.org/config/#serviceworker)
 - [Google Analytics Integration](https://vuepress.vuejs.org/config/#ga)
+- ["Last Updated" based on Git](https://vuepress.vuejs.org/default-theme-config/#last-updated)
 - [Multi-Language Support](https://vuepress.vuejs.org/guide/i18n.html)
 - A default theme with:
   - Responsive layout
-  - Optional Homepage
-  - [Automatic basic typeahead search](https://vuepress.vuejs.org/default-theme-config/#built-in-search)
+  - [Optional Homepage](https://vuepress.vuejs.org/default-theme-config/#homepage)
+  - [Simple out-of-the-box header-based search](https://vuepress.vuejs.org/default-theme-config/#built-in-search)
   - [Algolia Search](https://vuepress.vuejs.org/default-theme-config/#algolia-search)
   - Customizable navbar and sidebar
-  - Auto-generated GitHub link and page edit links
+  - [Auto-generated GitHub link and page edit links](https://vuepress.vuejs.org/default-theme-config/#git-repo-and-edit-links)
 
 ## Todo Features
 
 VuePress is still a work in progress. There are a few things that it currently does not support but are planned:
 
+- Plugin support
 - Blogging support
 
 Contributions are welcome!
